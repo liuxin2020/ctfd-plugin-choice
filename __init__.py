@@ -28,17 +28,17 @@ class ChoiceValueChallenge(BaseChallenge):
     id = "choice"  # Unique identifier used to register challenges
     name = "choice"  # Name of a challenge type
     templates = {  # Handlebars templates used for each aspect of challenge editing & viewing
-        "create": "/plugins/choice/assets/create.html",
-        "update": "/plugins/choice/assets/update.html",
-        "view": "/plugins/choice/assets/view.html",
+        "create": "/plugins/ctfd-plugin-choice/assets/create.html",
+        "update": "/plugins/ctfd-plugin-choice/assets/update.html",
+        "view": "/plugins/ctfd-plugin-choice/assets/view.html",
     }
     scripts = {  # Scripts that are loaded when a template is loaded
-        "create": "/plugins/choice/assets/create.js",
-        "update": "/plugins/choice/assets/update.js",
-        "view": "/plugins/choice/assets/view.js",
+        "create": "/plugins/ctfd-plugin-choice/assets/create.js",
+        "update": "/plugins/ctfd-plugin-choice/assets/update.js",
+        "view": "/plugins/ctfd-plugin-choice/assets/view.js",
     }
     # Route at which files are accessible. This must be registered using register_plugin_assets_directory()
-    route = "/plugins/choice/assets/"
+    route = "/plugins/ctfd-plugin-choice/assets/"
     # Blueprint used to access the static_folder directory.
     blueprint = Blueprint(
         "choice",
@@ -103,5 +103,5 @@ def load(app):
     upgrade()
     CHALLENGE_CLASSES["choice"] = ChoiceValueChallenge
     register_plugin_assets_directory(
-        app, base_path="/plugins/choice/assets/"
+        app, base_path="/plugins/ctfd-plugin-choice/assets/"
     )
